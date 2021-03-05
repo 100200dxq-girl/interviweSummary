@@ -1,9 +1,14 @@
 # interviweSummary
 1、js的基础数据类型和引用数据类型区别
    基本数据类型：string，number，boolean,undefined,null,Symbol(es6新的基础数据属性，用来表示独一无二的值)
-   引用数据类型：object,array,function   
+   引用数据类型：object,array,function  
+   
 2、原型链，继承
+   
 3、const、let、var区别
+   var声明的变量没有块级作用域，而且存在变量名提升的情况（var其实是有利有弊的，利就是不用去管什么常量与变量的，直接使用var就行，弊就是不存在块级作用域且变量名会提升，这会在无形之中给我们带来许多意想不到的问题）
+   const（es6中用来定义常量的一个关键字（当然了，其他语言里也存在着const，这里仅指在js中）。常用来声明常量，且常量不可修改，必须初始化，存在着块级作用域 let在块级作用域中为变量 可修改
+   
 4、http协议、报文、请求方式、状态码
 5、浏览器输入url到页面加载完成过程
 6、promise和settimeout以及promise.all实现
