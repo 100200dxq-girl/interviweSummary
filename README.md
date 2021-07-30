@@ -1,18 +1,22 @@
 # interviweSummary
 1、js的基础数据类型和引用数据类型区别
+
    基本数据类型：string，number，boolean,undefined,null,Symbol(es6新的基础数据属性，用来表示独一无二的值)
    引用数据类型：object,array,function  
    
 2、原型链，继承 https://zhuanlan.zhihu.com/p/81448205
+
    函数（拥有显示原型属性）其的propotype指向函数的原型对象；constructor指向的是构造函数；函数与对象的关系：每个对象的_proto_属性指向的是该对象的构造函数原型（Function.propotype）（为了实现继承，通过_proto_将对象和原型联系起来形成原型链，就可以让对象访问到不属于自己的属性）;原型对象之间的关系：原型对象的_protp_属性指向的是对象的原型对象（object.propotype）
   与es6的区别：通过子类的call函数调用父函数的构造方法，实现继承父类的成员变量，但是成员函数并没有被继承,通过将 
    
    
 3、const、let、var区别
+
    var声明的变量没有块级作用域，而且存在变量名提升的情况（var其实是有利有弊的，利就是不用去管什么常量与变量的，直接使用var就行，弊就是不存在块级作用域且变量名会提升，这会在无形之中给我们带来许多意想不到的问题）
    const（es6中用来定义常量的一个关键字（当然了，其他语言里也存在着const，这里仅指在js中）。常用来声明常量，且常量不可修改，必须初始化，存在着块级作用域 let在块级作用域中为变量 可修改
    
 4、http协议、报文、请求方式、状态码
+
    协议主要有http1.0 http1.1和http2.0 （https://blog.csdn.net/qq_22238021/article/details/81197157）
       1.0版本的工作方式是每次TCP连接只能发送一个请求，当服务器响应后就会关闭这次连接，下一个请求需要再次建立TCP连接，就是不支持keepalive
       1.1版本引入了持久连接，加入了管道机制，在同一个TCP连接里，允许多个请求同时发送，增加了并发性，进一步改善了HTTP协议的效率但是服务端是按队列顺序处理请求的，造成了“队头阻塞”的问题
@@ -33,6 +37,7 @@
 7、js几种函数类型的this指向
 
 8、js深拷贝浅拷贝
+
    判断依据就是是否产生新的数据对象，
    数组浅拷贝的方式：arr.slice(),arr.concact(),
    对象浅拷贝的方式：Object.assign(),{...obj},
@@ -41,14 +46,32 @@
 9、vue的双向数据绑定原理
 
 10、vue3.0+相较于2.0+有什么区别
+
 11、vue父子组件传值、状态管理
+
 12、如何解决vue首页加载慢的问题
+
 13、redux状态管理，数据流向
+
 14、react路由拦截、权限配置
+
 15、前端性能优化
+
 16、webpack和gulp打包原理
+
 17、js线程  https://www.cnblogs.com/ZavierTang/p/ZavierTang.html
+
     关键词：单线程、异步、执行栈、事件循环、消息队列、宏任务、微任务。
     js引擎的线程是单线程即只执行一条任务，当遇到计时器、dom事件监听和网络请求时；js引擎会交给浏览器提供的对应的触发线程，js会继续执行后面的主代码，这样就实现了异步非阻塞；直到执行栈是空的，就会把交给对应触发线程的回调函数交给消息队列放入执行栈中，直到结束，在反复动作称之为事件循环；
     宏任务与微任务是为了针对一些es6的情况，promise同样是处理异步情况，此时宏任务指的是主代码和消息队列的回调函数等，微任务指的是promise、promise.nextTick（process.nextTick 永远大于 promise.then）等；在执行宏任务时，遇到promise，会创建微任务，并把它加入微任务队列队尾，在执行完某个宏任务后，再重新渲染下个宏任务前，在第二个渲染前执行完在上一个宏任务期间创建的微任务
-18、
+    
+18、浏览器的兼容总结
+
+    css：
+     不同浏览器的标签默认的padding和margin；css3新属性得加浏览器前缀兼容早期浏览器；超链接访问过后hover样式不出现，需要单独兼容hover和active属性;识别标签方式不同（+background-color，_background-color）等；
+     
+    js:
+     事件绑定 （IE: dom.attachEvent();标准浏览器： dom.addEventListene（））；event对象问题（ev||window.event等）跟event有关，时间冒泡，默认事件等ie浏览器有自己的想法
+     
+     
+
